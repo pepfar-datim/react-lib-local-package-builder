@@ -1,6 +1,6 @@
 import {spawn,ChildProcess} from "child_process";
 import {blue, green, red} from "chalk";
-
+var cpx = require("cpx");
 
 enum OutputType {
     info='Info',
@@ -11,6 +11,7 @@ const processOutput = (name:string, type:OutputType)=>(data:any)=>{
     let output:string;
     if (typeof data==='string') output=data;
     else if (data.toString) output=data.toString();
+    else if (data.srcPath) output=data.srcPath;
     else output=`Cannot process output`
     console.log(blue(name),type===OutputType.error?red('Error'):green('Info'), output);
 }
@@ -28,7 +29,8 @@ function buildWatch(packageName:string, rootPath:string){
 }
 
 function copyWatch(packageName:string, rootPath:string){
-
+    let process = cpx.watch(`${rootPath}/${packageName}/dist/**/*`, `node_modules/@dhis2-app/${packageName}/dist`);
+    process.on('copy', processOutput('cpx',OutputType.info))
 }
 
 export function buildWatchPackage(packageName:string, rootPath:string){
