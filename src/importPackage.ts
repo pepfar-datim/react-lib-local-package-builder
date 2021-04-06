@@ -24,6 +24,3 @@ export function importPackage(path:string):void{
     let output = npm(`install ./local_modules/${packageName}`);
     console.log(output);
 }
-
-console.log(`Importing package ${process.argv[2]}`);
-importPackage(process.argv[2]);
