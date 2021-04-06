@@ -25,5 +25,5 @@ export function importPackage(path:string):void{
     console.log(output);
 }
 
-console.log(`Importing package ${process.argv[1]}`);
-importPackage(process.argv[1]);
+console.log(`Importing package ${process.argv[2]}`);
+importPackage(process.argv[2]);
