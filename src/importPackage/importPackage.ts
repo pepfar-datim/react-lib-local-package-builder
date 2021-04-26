@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 import {existsSync,mkdirSync} from "fs";
 import {spawnSync} from "child_process";
 
