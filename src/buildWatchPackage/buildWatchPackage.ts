@@ -15,7 +15,7 @@ export function buildWatch(packageName:string, rootPath:string){
 }
 
 export function copyWatch(packageName:string, rootPath:string){
-    let process = cpx.watch(`${rootPath}/${packageName}/dist/**/*`, `node_modules/@dhis2-app/${packageName}/dist`);
+    let process = cpx.watch(`${rootPath}/${packageName}/dist/**/*`, `node_modules/@pepfar-react-lib/${packageName}/dist`);
     process.on('copy', processOutput('cpx',OutputType.info, (data:any)=>`Copied ${data.srcPath}`))
 }
 
