@@ -16,7 +16,7 @@
     "build": "tsdx build",
     "buildPublish": "npm run build && npm publish --access=public"
   },
-  "name": "@dhis2-app/package-installer",
+  "name": "@pepfar-react-lib/local-package-builder",
   "author": "jakub-bao",
   "devDependencies": {
     "tsdx": "^0.14.1",
@@ -26,5 +26,10 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "cpx": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepfar-datim/react-lib-local-package-builder.git"
   }
+
 }
