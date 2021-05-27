@@ -1,5 +1,5 @@
 {
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "files": [
     "dist",
@@ -31,5 +31,4 @@
     "type": "git",
     "url": "https://github.com/pepfar-datim/react-lib-local-package-builder.git"
   }
-
 }
