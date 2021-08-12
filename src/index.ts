@@ -1,2 +1,3 @@
 export * from "./importPackage/importPackage";
-export * from "./buildWatchPackage/buildWatchPackage";
+export * from "./buildCopy/buildWatch";
+export * from "./buildCopy/copyWatch"
