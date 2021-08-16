@@ -28,11 +28,14 @@ async function initCopy(rootPath:string, packageName:string):Promise<void>{
     let peerDependencies:string[] = await getPeerDependencies(rootPath, packageName);
     let source = remotePath(rootPath, packageName);
     let destination = localPath(packageName);
-    cpx.copy(source+'/package.json', destination);
-    cpx.copy(source+'/node_modules/**/*', destination+'/node_modules', function(){
-        console.log('delete');
-        deletePeerDependencies(packageName, peerDependencies);
-    });
+    return new Promise(resolve=>{
+        cpx.copy(source+'/package.json', destination);
+        cpx.copy(source+'/node_modules/**/*', destination+'/node_modules', function(){
+            console.log('delete');
+            deletePeerDependencies(packageName, peerDependencies);
+            resolve();
+        });
+    })
 }
 
 export async function copyWatch(packageName:string, rootPath:string){
